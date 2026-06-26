@@ -8,6 +8,7 @@ const fs = require('fs');
 const path = require('path');
 
 const chatHandler = require('./api/chat');
+const leadHandler = require('./api/lead');
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -34,6 +35,9 @@ const server = http.createServer((req, res) => {
   }
   if (req.url === '/api/chat' && req.method === 'OPTIONS') {
     return chatHandler(req, res);
+  }
+  if (req.url === '/api/lead' && (req.method === 'POST' || req.method === 'OPTIONS')) {
+    return leadHandler(req, res);
   }
 
   // 정적 파일 서빙
