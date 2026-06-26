@@ -8,7 +8,7 @@
     { "src": "uploads/**",  "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/api/(.*)",     "dest": "/api/$1" },
+    { "src": "/api/(.*)",     "dest": "/api/$1.js" },
     { "src": "/chatbot.js",   "dest": "/chatbot.js" },
     { "src": "/support.js",   "dest": "/support.js" },
     { "src": "/uploads/(.*)", "dest": "/uploads/$1" },
