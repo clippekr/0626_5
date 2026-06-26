@@ -1,11 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/**/*.js",  "use": "@vercel/node" },
-    { "src": "index.html",   "use": "@vercel/static" },
-    { "src": "chatbot.js",   "use": "@vercel/static" },
-    { "src": "support.js",   "use": "@vercel/static" },
-    { "src": "uploads/**",   "use": "@vercel/static" }
+    { "src": "api/**/*.js", "use": "@vercel/node" },
+    { "src": "index.html",  "use": "@vercel/static" },
+    { "src": "chatbot.js",  "use": "@vercel/static" },
+    { "src": "support.js",  "use": "@vercel/static" },
+    { "src": "uploads/**",  "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/api/(.*)",     "dest": "/api/$1" },
