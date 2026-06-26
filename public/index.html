@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#fff;}
+  @keyframes scmFade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<div style="font-family:'Pretendard','Inter',sans-serif;color:#333333;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <!-- ===== NAV ===== -->
+  <header style="position:sticky;top:0;z-index:50;background:#1E3A5F;height:64px;display:flex;align-items:center;">
+    <nav style="max-width:1240px;margin:0 auto;width:100%;padding:0 32px;display:flex;align-items:center;justify-content:space-between;box-sizing:border-box;">
+      <div style="display:flex;align-items:center;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:42px;height:42px;overflow:hidden;position:relative;flex-shrink:0;border-radius:6px;">
+            <img src="uploads/Gemini_Generated_Image_i7h5uri7h5uri7h5.png" style="position:absolute;width:420px;height:auto;top:-17px;left:-12px;" alt="S마케팅 심볼">
+          </div>
+          <span style="color:#fff;font-weight:700;font-size:20px;letter-spacing:-0.3px;white-space:nowrap;">S-마케팅</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:34px;">
+        <a href="#services" style="color:rgba(255,255,255,0.78);text-decoration:none;font-size:15px;font-weight:500;">서비스</a>
+        <a href="#why" style="color:rgba(255,255,255,0.78);text-decoration:none;font-size:15px;font-weight:500;">차별점</a>
+        <a href="#process" style="color:rgba(255,255,255,0.78);text-decoration:none;font-size:15px;font-weight:500;">진행 방식</a>
+        <a href="#contact" style="color:rgba(255,255,255,0.78);text-decoration:none;font-size:15px;font-weight:500;">회사 소개</a>
+        <a href="#contact" style="background:#F2994A;color:#1E3A5F;text-decoration:none;font-size:14px;font-weight:700;padding:11px 22px;border-radius:9999px;" style-hover="background:#e08537;">무료 상담 신청</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section style="background:#16293F;color:#fff;padding:104px 32px 0;position:relative;overflow:hidden;">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;">
+      <div style="animation:scmFade .7s ease both;">
+        <div style="display:inline-block;background:rgba(242,153,74,0.16);color:#F2994A;font-size:13px;font-weight:600;padding:7px 14px;border-radius:9999px;margin-bottom:26px;">중소기업·소상공인 전문 마케팅 파트너</div>
+        <h1 style="font-size:54px;line-height:1.18;font-weight:700;letter-spacing:-1px;margin:0 0 22px;">작은 사업,<br><span style="color:#F2994A;font-weight:300;">큰 성장</span>의 시작</h1>
+        <p style="font-size:18px;line-height:1.6;color:rgba(255,255,255,0.72);max-width:480px;margin:0 0 36px;font-weight:300;">큰 비용 없이도 효과적인 마케팅 성과를. 데이터 기반의 맞춤 전략으로 사장님의 매출 성장을 함께 만들어갑니다.</p>
+        <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+          <a href="#contact" style="background:#F2994A;color:#1E3A5F;text-decoration:none;font-size:16px;font-weight:700;padding:15px 32px;border-radius:9999px;" style-hover="background:#e08537;">무료 상담 신청하기</a>
+          <a href="#services" style="border:1px solid rgba(255,255,255,0.28);color:#fff;text-decoration:none;font-size:16px;font-weight:600;padding:15px 30px;border-radius:9999px;" style-hover="background:rgba(255,255,255,0.08)">서비스 살펴보기</a>
+        </div>
+      </div>
+      <div style="aspect-ratio:4/3;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);box-shadow:0 8px 40px rgba(0,0,0,0.3);">
+        <img src="uploads/Gemini_Generated_Image_bnz13jbnz13jbnz1.png" alt="성수동 카페 매장" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+    </div>
+    <!-- stat strip -->
+    <div style="max-width:1240px;margin:80px auto 0;border-top:1px solid rgba(255,255,255,0.12);display:grid;grid-template-columns:repeat(4,1fr);">
+      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+        <div style="padding:30px 8px 40px;text-align:center;border-right:1px solid rgba(255,255,255,0.08);">
+          <div style="font-size:34px;font-weight:700;color:#fff;letter-spacing:-0.5px;">{{ s.num }}</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.6);margin-top:6px;">{{ s.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" style="background:#fff;padding:104px 32px;">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="margin-bottom:52px;">
+        <div style="color:#F2994A;font-weight:700;font-size:14px;letter-spacing:0.5px;margin-bottom:14px;">CORE SERVICES</div>
+        <h2 style="font-size:40px;font-weight:700;color:#1E3A5F;letter-spacing:-0.8px;margin:0 0 14px;line-height:1.2;">하나의 팀, 다섯 가지 마케팅 솔루션</h2>
+        <p style="font-size:18px;color:rgba(0,0,0,0.55);max-width:560px;margin:0;font-weight:300;line-height:1.6;">기획부터 광고 집행, 콘텐츠 제작까지. 우리 가게에 꼭 필요한 마케팅만 골라 시작하세요.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <sc-for list="{{ services }}" as="sv" hint-placeholder-count="5">
+          <div style="background:#F5F5F5;border-radius:10px;padding:30px;display:flex;flex-direction:column;min-height:200px;" style-hover="background:#eef1f5">
+            <div style="width:46px;height:46px;border-radius:10px;background:#1E3A5F;color:#F2994A;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;margin-bottom:20px;font-family:'Inter',sans-serif;">{{ sv.no }}</div>
+            <h3 style="font-size:21px;font-weight:700;color:#1E3A5F;margin:0 0 10px;">{{ sv.title }}</h3>
+            <p style="font-size:15px;line-height:1.6;color:rgba(0,0,0,0.6);margin:0;font-weight:400;">{{ sv.desc }}</p>
+          </div>
+        </sc-for>
+        <div style="background:#1E3A5F;border-radius:10px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;min-height:200px;">
+          <div>
+            <h3 style="font-size:21px;font-weight:700;color:#fff;margin:0 0 10px;">어떤 게 필요한지<br>모르겠다면?</h3>
+            <p style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.7);margin:0;font-weight:300;">업종과 상황에 맞는 조합을 무료로 진단해 드립니다.</p>
+          </div>
+          <a href="#contact" style="margin-top:20px;align-self:flex-start;background:#F2994A;color:#1E3A5F;text-decoration:none;font-size:14px;font-weight:700;padding:11px 22px;border-radius:9999px;" style-hover="background:#e08537">무료 진단 받기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY (deep blue band) ===== -->
+  <section id="why" style="background:#1E3A5F;color:#fff;padding:104px 32px;">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:center;">
+      <div>
+        <div style="color:#F2994A;font-weight:700;font-size:14px;letter-spacing:0.5px;margin-bottom:14px;">WHY S마케팅?</div>
+        <h2 style="font-size:40px;font-weight:300;letter-spacing:-0.8px;line-height:1.25;margin:0 0 20px;">대행사는 어렵다는<br><span style="font-weight:700;">생각을 바꿉니다</span></h2>
+        <p style="font-size:17px;line-height:1.7;color:rgba(255,255,255,0.7);margin:0 0 28px;font-weight:300;">대기업 중심의 고비용 마케팅이 아닌, 현실적이고 실행 가능한 전략으로 사장님의 실질적인 매출 증대를 지원합니다.</p>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);">
+          <img src="uploads/Gemini_Generated_Image_r22bxjr22bxjr22b.png" alt="S마케팅 현장" style="width:100%;height:220px;object-fit:cover;display:block;">
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <sc-for list="{{ whys }}" as="w" hint-placeholder-count="4">
+          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:26px;">
+            <div style="font-family:'Inter',sans-serif;font-size:13px;font-weight:700;color:#F2994A;margin-bottom:14px;">0{{ w.no }}</div>
+            <h4 style="font-size:18px;font-weight:700;margin:0 0 8px;">{{ w.title }}</h4>
+            <p style="font-size:14px;line-height:1.6;color:rgba(255,255,255,0.62);margin:0;font-weight:300;">{{ w.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section id="process" style="background:#fff;padding:104px 32px;">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:56px;">
+        <div style="color:#F2994A;font-weight:700;font-size:14px;letter-spacing:0.5px;margin-bottom:14px;">HOW WE WORK</div>
+        <h2 style="font-size:40px;font-weight:700;color:#1E3A5F;letter-spacing:-0.8px;margin:0;line-height:1.2;">상담부터 성과 리포트까지, 4단계면 충분합니다</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+          <div style="position:relative;padding-top:28px;border-top:2px solid #1E3A5F;">
+            <div style="font-family:'Inter',sans-serif;font-size:13px;font-weight:700;color:#F2994A;margin-bottom:10px;">STEP {{ st.no }}</div>
+            <h4 style="font-size:20px;font-weight:700;color:#1E3A5F;margin:0 0 10px;">{{ st.title }}</h4>
+            <p style="font-size:15px;line-height:1.6;color:rgba(0,0,0,0.58);margin:0;font-weight:300;">{{ st.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TARGET / quote band ===== -->
+  <section style="background:#F5F5F5;padding:96px 32px;">
+    <div style="max-width:1000px;margin:0 auto;text-align:center;">
+      <div style="color:#F2994A;font-weight:700;font-size:14px;letter-spacing:0.5px;margin-bottom:20px;">OUR VISION</div>
+      <p style="font-size:30px;line-height:1.45;font-weight:300;color:#1E3A5F;letter-spacing:-0.5px;margin:0 0 30px;">“대한민국의 모든 중소기업과 소상공인이<br><span style="font-weight:700;">마케팅 격차 없이 성장</span>할 수 있는 환경을 만듭니다.”</p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+        <sc-for list="{{ targets }}" as="t" hint-placeholder-count="3">
+          <span style="background:#fff;border:1px solid #e3e3e3;border-radius:9999px;padding:9px 20px;font-size:14px;font-weight:500;color:#444;">{{ t }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT CTA ===== -->
+  <section id="contact" style="background:#16293F;color:#fff;padding:96px 32px;">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;">
+      <div>
+        <h2 style="font-size:42px;font-weight:700;letter-spacing:-0.8px;line-height:1.2;margin:0 0 18px;">지금, 첫 상담을<br>시작해 보세요</h2>
+        <p style="font-size:17px;line-height:1.6;color:rgba(255,255,255,0.72);margin:0 0 32px;font-weight:300;">광고비 한 푼도 쓰기 전에, 우리 가게에 맞는 전략부터 무료로 들어보세요. 부담 없이 편하게 문의 주세요.</p>
+        <a href="mailto:contact@s-marketing.co.kr" style="background:#F2994A;color:#1E3A5F;text-decoration:none;font-size:16px;font-weight:700;padding:15px 34px;border-radius:9999px;display:inline-block;" style-hover="background:#e08537">무료 상담 신청하기</a>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:32px;">
+        <sc-for list="{{ contacts }}" as="c" hint-placeholder-count="4">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid rgba(255,255,255,0.08);">
+            <span style="font-size:14px;color:rgba(255,255,255,0.5);">{{ c.k }}</span>
+            <span style="font-size:15px;font-weight:500;color:#fff;font-family:'Inter',sans-serif;">{{ c.v }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background:#1E3A5F;color:rgba(255,255,255,0.7);padding:48px 32px;">
+    <div style="max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+          <div style="width:34px;height:34px;overflow:hidden;position:relative;flex-shrink:0;border-radius:5px;">
+            <img src="uploads/Gemini_Generated_Image_i7h5uri7h5uri7h5.png" style="position:absolute;width:340px;height:auto;top:-14px;left:-10px;" alt="S마케팅 심볼">
+          </div>
+          <span style="color:#fff;font-weight:700;font-size:17px;">S-마케팅</span>
+        </div>
+        <p style="font-size:13px;margin:0;color:rgba(255,255,255,0.5);">작은 사업, 큰 성장의 시작 · 2021 설립</p>
+      </div>
+      <div style="font-size:13px;line-height:1.9;color:rgba(255,255,255,0.55);text-align:right;">
+        contact@s-marketing.co.kr · 02-0000-0000<br>
+        서울특별시 OO구 OO로 00 · www.s-marketing.co.kr
+      </div>
+    </div>
+    <div style="max-width:1240px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,0.12);font-size:12px;color:rgba(255,255,255,0.4);">© 2026 S마케팅. 본 페이지는 가상의 회사를 가정한 예시입니다.</div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      stats: [
+        { num: "2021", label: "설립 연도" },
+        { num: "전국", label: "서비스 활동 지역" },
+        { num: "5+", label: "핵심 서비스 영역" },
+        { num: "100%", label: "투명한 성과 리포트" },
+      ],
+      services: [
+        { no: "01", title: "SNS 마케팅", desc: "인스타그램, 블로그, 네이버 등 채널별 콘텐츠 기획 및 운영" },
+        { no: "02", title: "온라인 광고", desc: "네이버 검색광고, 메타(페이스북·인스타그램) 광고 운영 및 최적화" },
+        { no: "03", title: "브랜딩 / 콘텐츠", desc: "로고, 상세페이지, 브랜드 스토리 등 콘텐츠 제작" },
+        { no: "04", title: "로컬 마케팅", desc: "지역 기반 소상공인 대상 매장 홍보 및 리뷰 마케팅" },
+        { no: "05", title: "마케팅 컨설팅", desc: "업종별 맞춤 전략 수립 및 월간 성과 리포트 제공" },
+      ],
+      whys: [
+        { no: "1", title: "합리적인 비용 구조", desc: "소상공인도 부담 없이 시작할 수 있는 패키지 상품" },
+        { no: "2", title: "업종별 맞춤 전략", desc: "일률적인 템플릿이 아닌 업종 특성을 반영한 전략" },
+        { no: "3", title: "투명한 성과 리포트", desc: "매월 광고비 집행 내역과 성과 데이터를 공유" },
+        { no: "4", title: "빠른 실행력", desc: "의사결정 단계를 최소화해 신속하게 캠페인을 런칭" },
+      ],
+      steps: [
+        { no: "1", title: "무료 상담", desc: "현재 상황과 목표를 듣고 방향을 함께 잡습니다." },
+        { no: "2", title: "맞춤 전략 수립", desc: "업종 특성을 반영한 실행 가능한 전략을 제안합니다." },
+        { no: "3", title: "캠페인 실행", desc: "콘텐츠 제작과 광고 집행을 신속하게 진행합니다." },
+        { no: "4", title: "성과 리포트", desc: "매월 데이터를 공유하며 다음 단계를 함께 개선합니다." },
+      ],
+      targets: ["신규 창업 소상공인", "온라인 쇼핑몰·1인 기업", "마케팅 전담 인력이 없는 중소기업", "카페·식당·미용실 등 오프라인 매장"],
+      contacts: [
+        { k: "이메일", v: "contact@s-marketing.co.kr" },
+        { k: "전화", v: "02-0000-0000" },
+        { k: "홈페이지", v: "www.s-marketing.co.kr" },
+        { k: "주소", v: "서울특별시 OO구 OO로 00" },
+      ],
+    };
+  }
+}
+</script>
+<script src="./chatbot.js"></script>
+</body>
+</html>
