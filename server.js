@@ -25,7 +25,7 @@ const MIME = {
   '.webp': 'image/webp',
 };
 
-const ROOT = path.join(__dirname, 'public');
+const ROOT = __dirname;
 const PORT = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {

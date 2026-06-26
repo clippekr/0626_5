@@ -1,7 +1,17 @@
 {
   "version": 2,
-  "outputDirectory": "public",
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" }
+  "builds": [
+    { "src": "api/**/*.js",  "use": "@vercel/node" },
+    { "src": "index.html",   "use": "@vercel/static" },
+    { "src": "chatbot.js",   "use": "@vercel/static" },
+    { "src": "support.js",   "use": "@vercel/static" },
+    { "src": "uploads/**",   "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)",     "dest": "/api/$1" },
+    { "src": "/chatbot.js",   "dest": "/chatbot.js" },
+    { "src": "/support.js",   "dest": "/support.js" },
+    { "src": "/uploads/(.*)", "dest": "/uploads/$1" },
+    { "src": "/(.*)",         "dest": "/index.html" }
   ]
 }
